@@ -6,7 +6,11 @@ namespace Bankomat
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            IO io = new IO();
+            io.MainPage();
+            int requestedMoney = io.ChooseMoney();
+            ATMLogic atmLogic = new ATMLogic();
+            atmLogic.ATMInit(requestedMoney);
         }
     }
 }
